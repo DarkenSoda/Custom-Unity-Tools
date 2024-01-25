@@ -3,7 +3,9 @@ guid: 06abac8053327304293930205835fbd2
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - m_ViewDataDictionary: {instanceID: 0}
+  - packages: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
