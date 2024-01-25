@@ -1,0 +1,11 @@
+{
+    "name":"com.darkensoda.customunitytools",
+    "version": "1.0.0",
+    "displayName": "DarkenSoda Custom Unity Tools",
+    "description": "Custom Tools including Folder initilization, Downloading a list of Packages and Script Creator with different Templates",
+    "unity" : "2022.3",
+    "author": {
+        "name": "DarkenSoda",
+        "url": "https://github.com/DarkenSoda"
+    }
+}

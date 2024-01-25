@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3f5346696a328644a58b2624a239d7c, type: 3}
+  m_Name: PackagesToInstallSO
+  m_EditorClassIdentifier: 
+  Packages:
+  - Name: Cinemachine
+    Link: com.unity.cinemachine
+    isSelected: 1
+  - Name: NavMesh
+    Link: com.unity.ai.navigation
+    isSelected: 1
+  - Name: ProBuilder
+    Link: com.unity.probuilder
+    isSelected: 1
+  - Name: Netcode for GameObjects
+    Link: com.unity.netcode.gameobjects
+    isSelected: 1
+  - Name: Input System
+    Link: com.unity.inputsystem
+    isSelected: 1
