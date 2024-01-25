@@ -10,7 +10,7 @@ namespace DarkenSoda.CustomTools.Editor {
         public PackagesToInstallSO packages;
         private Dictionary<string, PackageData> data = new();
 
-        [MenuItem("Tools/Setup/Install Initial Packages")]
+        [MenuItem("Tools/Setup/Install Packages")]
         static void Init() {
             InitialPackagesWindow window =
                 EditorWindow.GetWindow<InitialPackagesWindow>("Select Packages", typeof(EditorWindow));

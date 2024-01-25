@@ -1,11 +1,11 @@
 {
-    "name":"com.darkensoda.customunitytools",
-    "version": "1.0.0",
-    "displayName": "DarkenSoda Custom Unity Tools",
-    "description": "Custom Tools including Folder initilization, Downloading a list of Packages and Script Creator with different Templates",
-    "unity" : "2022.3",
-    "author": {
-        "name": "DarkenSoda",
-        "url": "https://github.com/DarkenSoda"
-    }
+	"name": "com.darkensoda.customunitytools",
+	"version": "1.0.0",
+	"displayName": "DarkenSoda Custom Unity Tools",
+	"description": "The Custom Tools Package for Unity provides a set of useful functionalities to streamline your project development workflow. It includes tools for initializing project folders, installing packages, creating script templates, enhancing the project window, and providing convenient shortcuts for common actions.",
+	"unity": "2022.3",
+	"author": {
+		"name": "DarkenSoda",
+		"url": "https://github.com/DarkenSoda"
+	}
 }
