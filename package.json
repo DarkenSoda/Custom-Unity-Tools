@@ -1,6 +1,6 @@
 {
 	"name": "com.darkensoda.customunitytools",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"displayName": "DarkenSoda Custom Unity Tools",
 	"description": "The Custom Tools Package for Unity provides a set of useful functionalities to streamline your project development workflow. It includes tools for initializing project folders, installing packages, creating script templates, enhancing the project window, and providing convenient shortcuts for common actions.",
 	"unity": "2022.3",

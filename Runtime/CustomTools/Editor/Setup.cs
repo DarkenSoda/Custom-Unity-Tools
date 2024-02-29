@@ -1,3 +1,5 @@
+#if UNITY_EDITOR
+
 using UnityEditor;
 using UnityEngine;
 using UnityEditor.PackageManager;
@@ -72,3 +74,5 @@ namespace DarkenSoda.CustomTools.Editor {
         }
     }
 }
+
+#endif
