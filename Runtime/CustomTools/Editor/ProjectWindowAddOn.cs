@@ -38,6 +38,8 @@ namespace DarkenSoda.CustomTools.Editor {
             EditorApplication.projectWindowItemOnGUI -= ProjectItemGUI;
             EditorApplication.projectWindowItemOnGUI += ProjectItemGUI;
             static void ProjectItemGUI(string guid, Rect selectionRect) {
+                if (selectionRect.height > 20) return;
+
                 selectionRect.width += selectionRect.x;
                 selectionRect.x = 0;
                 if (selectionRect.Contains(Event.current.mousePosition)) {
