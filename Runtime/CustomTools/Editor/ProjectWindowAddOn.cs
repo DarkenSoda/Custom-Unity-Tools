@@ -3,9 +3,11 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace DarkenSoda.CustomTools.Editor {
+namespace DarkenSoda.CustomTools.EditorScripts
+{
     [InitializeOnLoad]
-    public static class ProjectWindowAddOn {
+    public static class ProjectWindowAddOn
+    {
         private static double LastCacheUpdateTime = -3d;
         private static EditorWindow ProjectWindow = null;
         private static Texture FolderIcon = EditorGUIUtility.FindTexture("FolderOpened On Icon");
@@ -21,12 +23,16 @@ namespace DarkenSoda.CustomTools.Editor {
         };
 
         [InitializeOnLoadMethod]
-        public static void EditorInit() {
-            EditorApplication.update += () => {
+        public static void EditorInit()
+        {
+            EditorApplication.update += () =>
+            {
                 if (ProjectWindow != null || EditorApplication.timeSinceStartup <= LastCacheUpdateTime + 2d) return;
                 LastCacheUpdateTime = EditorApplication.timeSinceStartup;
-                foreach (var window in Resources.FindObjectsOfTypeAll<EditorWindow>()) {
-                    if (window.GetType().Name.EndsWith("ProjectBrowser")) {
+                foreach (var window in Resources.FindObjectsOfTypeAll<EditorWindow>())
+                {
+                    if (window.GetType().Name.EndsWith("ProjectBrowser"))
+                    {
                         window.wantsMouseMove = true;
                         ProjectWindow = window;
                         break;
@@ -37,24 +43,28 @@ namespace DarkenSoda.CustomTools.Editor {
             // Project Item GUI
             EditorApplication.projectWindowItemOnGUI -= ProjectItemGUI;
             EditorApplication.projectWindowItemOnGUI += ProjectItemGUI;
-            static void ProjectItemGUI(string guid, Rect selectionRect) {
+            static void ProjectItemGUI(string guid, Rect selectionRect)
+            {
                 if (selectionRect.height > 20) return;
 
                 selectionRect.width += selectionRect.x;
                 selectionRect.x = 0;
-                if (selectionRect.Contains(Event.current.mousePosition)) {
+                if (selectionRect.Contains(Event.current.mousePosition))
+                {
                     // Draw the selection rectangle.
                     EditorGUI.DrawRect(selectionRect, new Color(1, 1, 1, 0.06f));
 
                     string folder = AssetDatabase.GUIDToAssetPath(guid);
-                    if (AssetDatabase.IsValidFolder(folder)) {
+                    if (AssetDatabase.IsValidFolder(folder))
+                    {
                         float buttonWidth = 20f; // Adjust this value based on your icon size or desired width
                         float buttonSpacing = 30f; // Adjust the spacing between buttons
 
                         // Calculate position for scriptIcon button
                         float scriptIconButtonX = selectionRect.x + selectionRect.width - buttonSpacing;
                         Rect scriptIconButtonRect = new Rect(scriptIconButtonX, selectionRect.y - 4, buttonWidth, selectionRect.height + 7);
-                        if (GUI.Button(scriptIconButtonRect, ScriptIcon, new GUIStyle("label") { fixedWidth = 20 })) {
+                        if (GUI.Button(scriptIconButtonRect, ScriptIcon, new GUIStyle("label") { fixedWidth = 20 }))
+                        {
                             // Show Script menu
                             Selection.activeObject = AssetDatabase.LoadAssetAtPath<UnityEngine.Object>(folder);
                             EditorUtility.DisplayCustomMenu(scriptIconButtonRect, menuItems, -1, ShowMenu, null);
@@ -63,21 +73,25 @@ namespace DarkenSoda.CustomTools.Editor {
                         // Calculate position for folderIcon button
                         float folderIconButtonX = scriptIconButtonX - buttonSpacing;
                         Rect folderIconButtonRect = new Rect(folderIconButtonX, selectionRect.y - 4, buttonWidth, selectionRect.height + 7);
-                        if (GUI.Button(folderIconButtonRect, FolderIcon, new GUIStyle("label") { fixedWidth = 20 })) {
+                        if (GUI.Button(folderIconButtonRect, FolderIcon, new GUIStyle("label") { fixedWidth = 20 }))
+                        {
                             // Create Folder.
                             Selection.activeObject = AssetDatabase.LoadAssetAtPath<UnityEngine.Object>(folder);
                             ProjectWindowUtil.CreateFolder();
                         }
                     }
                 }
-                if (EditorWindow.mouseOverWindow != null && Event.current.type == EventType.MouseMove) {
+                if (EditorWindow.mouseOverWindow != null && Event.current.type == EventType.MouseMove)
+                {
                     EditorWindow.mouseOverWindow.Repaint();
                     Event.current.Use();
                 }
             }
 
-            static void ShowMenu(object userData, string[] options, int selected) {
-                switch(options[selected]) {
+            static void ShowMenu(object userData, string[] options, int selected)
+            {
+                switch (options[selected])
+                {
                     case "Class":
                         ScriptGenerator.CreateClass();
                         break;
